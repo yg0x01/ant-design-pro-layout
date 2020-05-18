@@ -299,7 +299,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   // don't need padding in phone mode
   const hasLeftPadding = fixSiderbar && PropsLayout !== 'topmenu' && !isMobile;
 
-  const [collapsed, onCollapse] = useMergeValue<boolean>(false, {
+  const [collapsed, onCollapse] = useMergeValue<boolean>(true, {
     value: props.collapsed,
     onChange: propsOnCollapse,
   });
