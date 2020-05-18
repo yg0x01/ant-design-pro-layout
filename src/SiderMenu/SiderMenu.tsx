@@ -89,14 +89,17 @@ const SiderMenu: React.FC<SiderMenuProps> = (props) => {
 
   const headerDom = defaultRenderLogoAndTitle(props);
 
+  console.log(collapsed);
+
   return (
     <Sider
       collapsible
       trigger={null}
       collapsed={collapsed}
+      defaultCollapsed
       breakpoint={breakpoint === false ? undefined : breakpoint}
-      onCollapse={(collapse) => {
-        if (!isMobile) {
+      onCollapse={(collapse, type) => {
+        if (!isMobile && type !== 'responsive') {
           if (onCollapse) {
             onCollapse(collapse);
           }

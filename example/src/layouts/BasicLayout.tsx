@@ -32,7 +32,7 @@ export type BasicLayoutContext = { [K in 'location']: BasicLayoutProps[K] } & {
 };
 
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
-  const [collapsed, handleMenuCollapse] = useState<boolean>(false);
+  const [collapsed, handleMenuCollapse] = useState<boolean>(true);
   const [settings, setSettings] = useState<Partial<Settings>>({
     ...defaultSettings,
     fixSiderbar: true,
@@ -53,6 +53,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
             <span>name</span>
           </>,
         ]}
+        collapsed
         onCollapse={handleMenuCollapse}
         menuItemRender={(menuItemProps, defaultDom) =>
           menuItemProps.isUrl ? (
